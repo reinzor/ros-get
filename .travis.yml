@@ -1,0 +1,18 @@
+language: python
+cache:
+  directories:
+  - "$HOME/.cache/pip"
+matrix:
+  include:
+  - os: linux
+    dist: trusty
+    python: '2.7'
+  - os: linux
+    dist: trusty
+    python: '3.5'
+install:
+- "./.travis/install.sh"
+script:
+- pip install -e .
+- ros-env create ~/ros/indigo
+
